@@ -6,6 +6,7 @@ package is.ru.honn.feeds;
 
 public interface FeedReader
 {
-    public void setSource(String source);
-    public boolean read();
+    boolean read();
+    void setSource(String source);
+    void setFeedHandler(FeedHandler handler);
 }

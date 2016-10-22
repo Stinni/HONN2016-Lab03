@@ -9,7 +9,7 @@ import is.ru.honn.feeds.FeedReader;
 
 public class ReaderFactory
 {
-    public static FeedReader getFeedReader(String source)
+    public static FeedReader getFeedReader()
     {
         FeedProperties props = new FeedProperties();
         Class instanceClass;
@@ -18,7 +18,6 @@ public class ReaderFactory
         {
             instanceClass = Class.forName(props.getReader());
             reader = (FeedReader)instanceClass.newInstance();
-            reader.setSource(source);
         }
         catch (Exception e)
         {

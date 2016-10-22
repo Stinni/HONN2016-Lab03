@@ -6,18 +6,24 @@ package is.ru.honn.feeds;
 
 import is.ru.honn.factory.ReaderFactory;
 
-public class ReaderProcess
+public class ReaderProcess implements FeedHandler
 {
     FeedReader reader;
-    public ReaderProcess()
+
+    public ReaderProcess(String source)
     {
-        reader = ReaderFactory.getFeedReader(
-                "http://www.olafurandri.com/?feed=rss2");
-                //"http://instagram.com/tags/photooftheday/feed/recent.rss");
+        reader = ReaderFactory.getFeedReader();
+        reader.setFeedHandler(this);
+        reader.setSource(source);
     }
 
     public void read()
     {
         reader.read();
+    }
+
+    public void processEntry(FeedEntry entry)
+    {
+        System.out.println(entry);
     }
 }

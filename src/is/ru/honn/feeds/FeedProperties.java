@@ -10,9 +10,7 @@ import java.util.Properties;
 
 public class FeedProperties extends Properties
 {
-
     protected String reader;
-
     protected String DEFAULT_PROPERTIES = "feeds.properties";
 
     public FeedProperties()

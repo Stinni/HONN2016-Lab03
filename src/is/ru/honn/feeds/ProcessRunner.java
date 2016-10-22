@@ -8,7 +8,7 @@ public class ProcessRunner
 {
     public static void main(String[] args)
     {
-        ReaderProcess readerProcess = new ReaderProcess();
+        ReaderProcess readerProcess = new ReaderProcess("http://www.olafurandri.com/?feed=rss2");
         readerProcess.read();
     }
 }
